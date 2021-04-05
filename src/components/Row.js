@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../axios/axios";
 import React, { useEffect, useState } from "react";
 import "../assets/styles/row.css";
 
@@ -7,10 +7,7 @@ export default function Row({ title, fetchUrl, isLargeRow = false }) {
   const baseUrl = "https://image.tmdb.org/t/p/original/";
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(
-        "https://api.themoviedb.org/3/discover/tv?api_key=d9346934238b066a20b7724573898f53&with_networks=213"
-      );
-      //   const request = await axios.get(fetchUrl);
+      const request = await axios.get(fetchUrl);
       console.log(request);
       setMovies(request.data.results);
       return request;
