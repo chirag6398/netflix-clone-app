@@ -29,6 +29,9 @@ export default function Row({ title, fetchUrl, isLargeRow = false }) {
       <h2>{title}</h2>
       <div className="row__posters">
         {movies.map((movie) => {
+          if (!movie.backdrop_path || !movie.poster_path) {
+            return null;
+          }
           return (
             <img
               className={`row__poster ${isLargeRow ? "row__posterLarge" : ""}`}

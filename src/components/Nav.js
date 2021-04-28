@@ -18,7 +18,7 @@ export default function Nav() {
     };
   }, []);
   return (
-    <div className={show && "nav"}>
+    <div className={show ? "nav" : ""}>
       <div className="nav_container">
         <img
           className="netflix_logo"
