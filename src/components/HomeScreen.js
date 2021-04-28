@@ -16,11 +16,12 @@ export default function HomeScreen() {
       />
       <Row title="TRENDING NOW" fetchUrl={request.fetchTrending} />
       <Row title="TOP RATED" fetchUrl={request.fetchTopRated} />
-      <Row title="ACTION MOVIES" fetchUrl={request.fetchActionMovies} />
-      <Row title="COMEDY MOVIES" fetchUrl={request.fetchComedyMovies} />
-      <Row title="HORROR MOVIES" fetchUrl={request.fetchHorrorMovies} />
-      <Row title="ROMANCE MOVIES" fetchUrl={request.fetchRomanceMovies} />
-      <Row title="DOCUMENTARIES" fetchUrl={request.fetchDocumentaries} />
+      <Row title="ACTION MOVIES" fetchUrl={request.fetchTrending} />
+      <Row title="HORROR MOVIES" fetchUrl={request.fetchTopRated} />
+      <Row title="COMEDY MOVIES" fetchUrl={request.fetchTrending} />
+
+      <Row title="ROMANCE MOVIES" fetchUrl={request.fetchTopRated} />
+      <Row title="DOCUMENTARIES" fetchUrl={request.fetchTrending} />
     </div>
   );
 }

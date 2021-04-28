@@ -10,18 +10,17 @@ export default function Row({ title, fetchUrl, isLargeRow = false }) {
     async function fetchData() {
       try {
         const request = await axios.get(fetchUrl);
-        console.log(request);
+
         setLoading(false);
         setMovies(request.data.results);
         return request;
       } catch (err) {
         setLoading(false);
-        console.log(`error is ${err}`);
       }
     }
     fetchData();
   }, [fetchUrl]);
-  console.log(movies);
+
   if (isLoading) {
     return <h2 style={{ color: "white" }}>Loading...</h2>;
   }
@@ -32,7 +31,7 @@ export default function Row({ title, fetchUrl, isLargeRow = false }) {
         {movies.map((movie) => {
           return (
             <img
-              className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+              className={`row__poster ${isLargeRow ? "row__posterLarge" : ""}`}
               key={movie.id}
               src={`${baseUrl}${
                 isLargeRow ? movie.poster_path : movie.backdrop_path
